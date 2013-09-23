@@ -51,7 +51,7 @@ index 4c700df..a89ece3 100644
  		/* DSP_B mode */
 -	  printk("davinci hw_params _ PLAYBACK modified\n");
 -	  mcasp_clr_bits(dev->base + DAVINCI_MCASP_AHCLKXCTL_REG, AHCLKXE);
-+		mcasp_clr_bits(dev->base + DAVINCI_MCASP_AHCLKXCTL_REG, AHCLKXE);
++		mcasp_set_bits(dev->base + DAVINCI_MCASP_AHCLKXCTL_REG, AHCLKXE); /* Audio Cape Workaround */ //mcasp_clr_bits(dev->base + DAVINCI_MCASP_AHCLKXCTL_REG, AHCLKXE);
  		mcasp_set_reg(dev->base + DAVINCI_MCASP_TXTDM_REG, mask);
  		mcasp_set_bits(dev->base + DAVINCI_MCASP_TXFMT_REG, TXORD);
  
